@@ -1,0 +1,21 @@
+{
+	"name": "mean-stack",
+	"version": "1.0.0",
+	"description": "MEAN Stack boilerplate",
+	"author": "IvánHdzD",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"start": "cd server && npm start",
+		"client": "cd client && npm run dev",
+		"server": "cd server && npm run dev",
+		"predev": "npm run purge",
+		"dev": "concurrently \"npm run server\" \"npm run client\"",
+		"build": "cd client && ng build --prod --base-href http://127.0.0.1:3000/",
+		"postbuild": "node scripts/directories/copy-directory client/dist server/public",
+		"purge": "node scripts/directories/delete-directory server/public"
+	},
+	"devDependencies": {
+		"concurrently": "^4.1.0"
+	}
+}

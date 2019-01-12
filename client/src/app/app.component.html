@@ -1,0 +1,9 @@
+<h1>Welcome to MEAN Stack boilerplate!</h1>
+<section>
+	<img src="assets/img/angular-icon.svg" alt="Angular icon" width="256">
+</section>
+<form [formGroup]="form" (submit)="GetGreeting()">
+	<input type="text" formControlName="name" placeholder="Your name">
+	<button type="submit" [disabled]="!form.valid">Submit</button>
+</form>
+<router-outlet></router-outlet>
